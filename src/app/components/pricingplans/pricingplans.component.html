@@ -1,0 +1,72 @@
+<body>
+    <div class="container-fluid">
+        <div class="row">
+            <div class="col-md-2 p-0 bg-light border-end">
+                <app-menu></app-menu>
+            </div>
+            <main class="col-md-10 ms-sm-auto px-4">
+                <app-header></app-header>
+                
+                <div class="d-flex justify-content-between align-items-center my-3">
+                    <div class="input-group w-25">
+                        <input type="text" class="form-control" placeholder="Search Here">
+                    </div>
+                    <div class="d-flex align-items-center">
+                        <label class="me-2">Filter By:</label>
+                        <select class="form-select w-auto">
+                            <option>Date</option>
+                        </select>
+                    </div>
+                    <div>
+                        <button class="btn btn-primary me-2" (click)="openDialog(null)">+ Add Plans</button>
+                        <!-- <button class="btn btn-success">Export to Excel</button> -->
+                    </div>
+                </div>
+                
+                <div class="table-responsive">
+                    <table class="table table-bordered table-striped">
+                        <thead class="table-light">
+                            <tr>
+                                <th>Id</th>
+                                <th>Plan Name</th>
+                                <th>Price</th>
+                                <th>Created On</th>
+                                <th>Modified On</th>
+                                <th>Status</th>
+                                <th>Action</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr *ngFor="let item of userList;let i = index">
+                                <td>{{i + 1}}</td>
+                                <td>{{item.planName}}</td>
+                                <td>{{item.price}}</td>
+                                <!-- <td>{{item.role}}</td> -->
+                                <td>04/01/2025</td>
+                                <td>04/01/2025</td>
+                                <td><span class="badge bg-success">Active</span></td>
+                                <td>
+                                    <button class="btn btn-warning btn-sm me-1" (click)="openDialog(item)"><i class="fa fa-edit"></i></button>
+                                    <button class="btn btn-danger btn-sm"><i class="fa-solid fa-trash-can" (click)="deletePricingPlan(item._id)"></i></button>
+                                </td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+                
+                <nav>
+                    <ul class="pagination justify-content-center">
+                        <li class="page-item disabled"><a class="page-link" href="#">Previous</a></li>
+                        <li class="page-item active"><a class="page-link" href="#">1</a></li>
+                        <li class="page-item"><a class="page-link" href="#">2</a></li>
+                        <li class="page-item"><a class="page-link" href="#">3</a></li>
+                        <li class="page-item"><a class="page-link" href="#">...</a></li>
+                        <li class="page-item"><a class="page-link" href="#">1000</a></li>
+                        <li class="page-item"><a class="page-link" href="#">Next</a></li>
+                    </ul>
+                </nav>
+            </main>
+        </div>
+    </div>
+
+</body>

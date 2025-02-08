@@ -1,0 +1,112 @@
+.menu-container {
+    flex: 0.2 !important;
+    border-right: 2px solid #c5c5c5;
+    overflow: hidden;
+    background: white;
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    padding: 1rem 0;
+}
+
+/* Menu Items */
+.main-menu ul {
+    list-style: none;
+    padding: 0;
+    /* margin: 0; */
+    margin: -13px;
+}
+
+.main-menu li {
+    padding: 10px 0;
+}
+
+.menu-item {
+    display: flex;
+    align-items: center;
+    padding: 12px 20px;
+    text-decoration: none;
+    color: #333;
+    font-size: 16px;
+    font-family: 'Lato', sans-serif;
+    font-weight: 500;
+    transition: background 0.3s ease;
+}
+
+/* Active Menu Style */
+.main-menu .active-menu {
+    background-color: #f0f0f0;
+    border-right: 4px solid #299B99;
+}
+
+/* Icons */
+.menu-item::before {
+    content: "";
+    display: inline-block;
+    width: 20px;
+    height: 20px;
+    background-size: contain;
+    background-repeat: no-repeat;
+    margin-right: 12px;
+}
+
+.dashboard-icon::before {
+    background-image: url('/assets/home.png');
+}
+
+.user-icon::before {
+    background-image: url('/assets/users.png');
+}
+
+.mentors-icon::before {
+    background-image: url('/assets/mentors.png');
+}
+
+.students-icon::before {
+    background-image: url('/assets/students.png');
+}
+
+.licenses-icon::before {
+    background-image: url('/assets/licenses.png');
+}
+
+.course-icon::before {
+    background-image: url('/assets/course.png');
+}
+
+.pricing-icon::before {
+    background-image: url('/assets/pricing.png');
+}
+
+.masters-icon::before {
+    background-image: url('/assets/masters.png');
+}
+
+/* Logout Section */
+.logout-section {
+    padding: 1rem;
+}
+
+.logout-button {
+    width: 70%;
+    padding: 0.8rem;
+    background-color: #002b80;
+    color: white;
+    border: none;
+    border-radius: 12px;
+    cursor: pointer;
+    font-size: 1rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 8px;
+}
+
+.signout-icon {
+    width: 20px;
+    height: 20px;
+}
+.row{
+    border-right: 1px solid;
+}

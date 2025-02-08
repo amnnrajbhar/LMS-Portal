@@ -1,0 +1,44 @@
+
+<body>
+    <div class="container">
+        <div class="image-container">
+            <img src="assets/loginImg.jpg" alt="Login Illustration">
+        </div>
+        <div class="login-container">
+            <h2>SIGN UP</h2>
+            <form #signUpForm="ngForm" (ngSubmit)="onSubmit(signUpForm)">
+                <div class="form-group">
+                    <label>Enter Username</label>
+                    <input type="text" id="name" name="username" required [(ngModel)]="username" #Username="ngModel">
+                    <div *ngIf="Username.invalid && Username.touched">
+                        <small>Please enter username</small>
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label>Password</label>
+                    <input type="password" name="password" required [(ngModel)]="password" #Password="ngModel">
+                    <div *ngIf="Password.invalid && Password.touched">
+                        <small>Please enter password</small>
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label>Confirm Password</label>
+                    <input type="password" name="confirmpassword" required [(ngModel)]="confirmpassword" #ConfirmPassword="ngModel">
+                    <div *ngIf="ConfirmPassword.invalid && ConfirmPassword.value!=Password.value">
+                        <small>Password not matched</small>
+                    </div>
+                </div>
+                <div class="checkbox-label">
+                    <input type="checkbox" id="terms&conditions">
+                    <label for="terms&conditions">Accept terms & conditions</label>
+                </div>
+                <button type="submit" class="login-button">Sign Up</button>
+                <div class="links-section">
+                    <br>
+                    <a href="#" routerLink="/login">Back to login</a>
+                    <br>
+                </div>
+            </form>
+        </div>
+    </div>
+</body>

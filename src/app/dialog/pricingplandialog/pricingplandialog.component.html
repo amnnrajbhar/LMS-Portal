@@ -1,0 +1,64 @@
+
+    <h2 mat-dialog-title class="text-center fw-bold">Create New Plan</h2>
+  
+    <mat-dialog-content class="container" style="height: 500px !important;">
+      <form [formGroup]="pricingPlansForm">
+        <input type="hidden" formControlName="_id">
+  
+        <div class="row mb-3">
+          <div class="col-md-6">
+            <label class="form-label">Plan Name</label>
+            <input matInput class="form-control" formControlName="planName" placeholder="Enter full name" required>
+            <div class="invalid-feedback" *ngIf="pricingPlansForm.get('planName')?.invalid">
+              Full Name is required
+            </div>
+          </div>
+          <div class="col-md-6">
+            <label class="form-label">Price</label>
+            <input matInput type="price" class="form-control" formControlName="price" placeholder="Enter Price"
+              required>
+            <div class="invalid-feedback" *ngIf="pricingPlansForm.get('price')?.invalid">
+              Valid Price is required
+            </div>
+          </div>
+        </div>
+  
+        <div class="row mb-3">
+          <div class="col-md-6">
+            <label class="form-label">Select Course</label>
+            <!-- <mat-select formControlName="course" class="form-control">
+            <mat-option value="uiux">UI/UX Design</mat-option>
+            <mat-option value="developer">Developer</mat-option>
+            <mat-option value="manager">Manager</mat-option>
+            <mat-option value="admin">Admin</mat-option>
+          </mat-select> -->
+            <mat-select formControlName="course" class="form-control">
+              <mat-option *ngFor="let course of courseList" [value]="course.courseId">{{course.course}}</mat-option>
+            </mat-select>
+            <div class="invalid-feedback" *ngIf="pricingPlansForm.get('course')?.invalid">
+              Course selection is required
+            </div>
+          </div>
+  
+          <div class="col-md-6">
+            <label class="form-label">Status</label>
+            <mat-select formControlName="status" class="form-control" id="statusId">
+              <mat-option *ngFor="let status of statusList" [value]="status.statusId">{{status.status}}</mat-option>
+            </mat-select>
+            <div class="invalid-feedback" *ngIf="pricingPlansForm.get('status')?.invalid">
+              Status selection is required
+            </div>
+          </div>
+        </div>
+      </form>
+  
+      <div class="alert alert-light mt-3">
+        <strong>Note:</strong> After updating, you will receive an User Name to update your password.
+      </div>
+  
+      <mat-dialog-actions class="d-flex justify-content-end p-3">
+        <button mat-button mat-dialog-close class="btn btn-outline-secondary me-2">Cancel</button>
+        <button mat-button [disabled]="pricingPlansForm.invalid" [mat-dialog-close]="pricingPlansForm.value" class="btn btn-primary">Save
+          Changes</button>
+      </mat-dialog-actions>
+    </mat-dialog-content>

@@ -1,0 +1,67 @@
+
+.profile {
+    display: flex;
+    align-items: center;
+}
+.profile i {
+    margin-right: 10px;
+}
+
+.controls {
+    display: flex;
+    /* justify-content: space-between; */
+    margin-bottom: 20px;
+    float: right;
+}
+.controls select, .controls button {
+    padding: 8px 15px;
+    border-radius: 5px;
+    cursor: pointer;
+}
+.controls button {
+    background: #012A6D;
+    color: white;
+    border: none;
+}
+table {
+    width: 100%;
+    border-collapse: collapse;
+}
+table th, table td {
+    border: 1px solid #ccc;
+    padding: 10px;
+    text-align: left;
+}
+.status.active {
+    background: green;
+    color: white;
+    padding: 5px 10px;
+    border-radius: 5px;
+}
+.pagination {
+    margin-top: 20px;
+    display: flex;
+    justify-content: space-between;
+}
+.edit, .delete {
+    background: none;
+    border: none;
+    cursor: pointer;
+}
+.add-user::before {
+    background-image: url('/assets/course.png');
+}
+.deleteIcon::before {
+    background-image: url('/assets/deleteIcon.png');
+}
+.menu-item {
+    display: flex;
+    align-items: center;
+    padding: 12px 20px;
+    text-decoration: none;
+    color: #333;
+    font-size: 16px;
+    font-family: 'Lato', sans-serif;
+    font-weight: 500;
+    transition: background 0.3s ease;
+}

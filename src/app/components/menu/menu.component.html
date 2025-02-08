@@ -1,0 +1,67 @@
+<div class="container-fluid border-right">
+    <div class="row">
+        <!-- col-12 col-md-3 d-flex justify-content-center align-items-center py-3 -->
+        <div class="">
+            <div class="image-container" style="margin: 16px 12px 20px;">
+                <img src="/assets/logo.png" alt="Company Logo" class="logo img-fluid">
+            </div>
+        </div>
+
+        <div class="">
+            <nav class="main-menu">
+                <ul class="nav flex-column">
+                    <li class="nav-item">
+                        <a class="nav-link menu-item dashboard-icon" routerLink="/home" routerLinkActive="active-menu">
+                            Dashboard
+                        </a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link menu-item user-icon" routerLink="/users" routerLinkActive="active-menu">
+                            Users
+                        </a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link menu-item mentors-icon" routerLink="/mentors" routerLinkActive="active-menu">
+                            Mentors
+                        </a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link menu-item students-icon" routerLink="/students" routerLinkActive="active-menu">
+                            Students
+                        </a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link menu-item licenses-icon" routerLink="/licenses" routerLinkActive="active-menu">
+                            Licenses
+                        </a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link menu-item course-icon" routerLink="/course" routerLinkActive="active-menu">
+                            Course
+                        </a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link menu-item pricing-icon" routerLink="/pricingplans" routerLinkActive="active-menu">
+                            Pricing Plans
+                        </a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link menu-item masters-icon" routerLink="/masters" routerLinkActive="active-menu">
+                            Masters
+                        </a>
+                    </li>
+                </ul>
+            </nav>
+        </div>
+
+        <div class="">
+            <!-- col-12 col-md-3 d-flex justify-content-center align-items-center py-3 -->
+            <div class="logout-section text-center">
+                <button type="button" class="btn btn-link logout-button" (click)="onLogout()">
+                    <img src="/assets/signout.png" alt="Sign Out" class="signout-icon">
+                    Sign Out
+                </button>
+            </div>
+        </div>
+    </div>
+</div>
