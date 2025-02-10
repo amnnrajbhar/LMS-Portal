@@ -5,9 +5,13 @@ import { Injectable } from '@angular/core';
   providedIn: 'root'
 })
 export class HttpserviceService {
-  apiUrl: any = 'http://localhost:5000/users';
-  apiUrlMember: any = 'http://localhost:5000/members';
-  apiUrlPricingplan: any = 'http://localhost:5000/pricingplan';
+  apiUrl: any = 'https://lms-portal-backend-vixs.onrender.com/users';
+  apiUrlMember: any = 'https://lms-portal-backend-vixs.onrender.com/members';
+  apiUrlPricingplan: any = 'https://lms-portal-backend-vixs.onrender.com/pricingplan';
+
+  // apiUrl: any = 'http://localhost:5000/users';
+  // apiUrlMember: any = 'http://localhost:5000/members';
+  // apiUrlPricingplan: any = 'http://localhost:5000/pricingplan';
   constructor(private http: HttpClient) { }
 
 
