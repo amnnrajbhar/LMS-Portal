@@ -10,7 +10,7 @@ import { LicensesComponent } from './components/licenses/licenses.component';
 import { StudentsComponent } from './components/students/students.component';
 import { MentorsComponent } from './components/mentors/mentors.component';
 import { UsersComponent } from './components/users/users.component';
-import { MenuComponent } from './components/menu/menu.component';
+import { MenuComponent } from './common-components/menu/menu.component';
 
 const routes: Routes = [
   {path:'',component:LoginComponent},

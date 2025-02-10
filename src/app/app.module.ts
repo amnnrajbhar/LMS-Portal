@@ -16,8 +16,8 @@ import { LicensesComponent } from './components/licenses/licenses.component';
 import { CourseComponent } from './components/course/course.component';
 import { PricingplansComponent } from './components/pricingplans/pricingplans.component';
 import { MastersComponent } from './components/masters/masters.component';
-import { MenuComponent } from './components/menu/menu.component';
-import { HeaderComponent } from './components/header/header.component';
+import { MenuComponent } from './common-components/menu/menu.component';
+import { HeaderComponent } from './common-components/header/header.component';
 import { DialogComponent } from './dialog/usersdialog/dialog.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { MatDialogModule } from '@angular/material/dialog';
@@ -25,6 +25,9 @@ import {MatFormFieldModule} from '@angular/material/form-field';
 import {MatSelectModule} from '@angular/material/select';
 import {HttpClientModule} from '@angular/common/http';
 import { PricingplandialogComponent } from './dialog/pricingplandialog/pricingplandialog.component';
+import {MatPaginatorModule} from '@angular/material/paginator';
+import {MatTableModule} from '@angular/material/table';
+import { PaginationComponent } from './common-components/pagination/pagination.component';
 @NgModule({
   declarations: [
     AppComponent,
@@ -42,6 +45,7 @@ import { PricingplandialogComponent } from './dialog/pricingplandialog/pricingpl
     HeaderComponent,
     DialogComponent,
     PricingplandialogComponent,
+    PaginationComponent
   ],
   imports: [
     BrowserModule,
@@ -52,7 +56,9 @@ import { PricingplandialogComponent } from './dialog/pricingplandialog/pricingpl
     MatDialogModule,
     MatFormFieldModule,
     MatSelectModule,
-    HttpClientModule
+    HttpClientModule,
+    MatPaginatorModule,
+    MatTableModule
   ],
   providers: [],
   bootstrap: [AppComponent]

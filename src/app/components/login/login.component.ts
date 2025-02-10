@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
 import { first } from 'rxjs';
-import { HttpserviceService } from 'src/app/services/httpservice.service';
+import { HttpserviceService } from 'src/app/services/HttpService/httpservice.service';
 //import { getAuth, createUserWithEmailAndPassword } from "firebase/auth";
 
 @Component({

@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
-import { HttpserviceService } from 'src/app/services/httpservice.service';
+import { HttpserviceService } from 'src/app/services/HttpService/httpservice.service';
 
 @Component({
   selector: 'app-signup',

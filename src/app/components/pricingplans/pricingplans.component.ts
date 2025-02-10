@@ -1,7 +1,7 @@
 import { Component } from '@angular/core';
 import { MatDialog } from '@angular/material/dialog';
 import { PricingplandialogComponent } from 'src/app/dialog/pricingplandialog/pricingplandialog.component';
-import { HttpserviceService } from 'src/app/services/httpservice.service';
+import { HttpserviceService } from 'src/app/services/HttpService/httpservice.service';
 
 @Component({
   selector: 'app-pricingplans',

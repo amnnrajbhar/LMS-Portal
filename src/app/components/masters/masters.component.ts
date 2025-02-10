@@ -1,7 +1,8 @@
 import { Component } from '@angular/core';
 import { MatDialog } from '@angular/material/dialog';
 import { DialogComponent } from 'src/app/dialog/usersdialog/dialog.component';
-import { HttpserviceService } from 'src/app/services/httpservice.service';
+import { ExcelServiceService } from 'src/app/services/ExcelService/excel-service.service';
+import { HttpserviceService } from 'src/app/services/HttpService/httpservice.service';
 
 @Component({
   selector: 'app-masters',
@@ -17,7 +18,7 @@ users: any[] = [];
     { roleId: '3', role: 'Manager' },
     { roleId: '4', role: 'Student' }
   ];
-  constructor(private dialog: MatDialog, private httpservice: HttpserviceService) { }
+  constructor(private dialog: MatDialog, private httpservice: HttpserviceService,private excelService: ExcelServiceService) { }
   ngOnInit(): void {
     // this.users = [
     //   {
@@ -109,8 +110,6 @@ users: any[] = [];
     });
   }
 
-  exportToExcel() {
-  }
 
   deleteUser(id: any) {
     this.httpservice.deleteUser(id).subscribe(data => {
@@ -126,5 +125,10 @@ users: any[] = [];
       this.userList = data;
       console.log(data);
     });
+  }
+
+  exportToExcel(): void {
+    // debugger;
+    this.excelService.exportAsExcelFile(this.userList, 'Masters');
   }
 }
