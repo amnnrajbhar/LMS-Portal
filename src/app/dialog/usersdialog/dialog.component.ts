@@ -35,7 +35,7 @@ export class DialogComponent implements OnInit {
 
   ngOnInit(): void {
     debugger;
-    if (this.usersFormData.isUserForm == true) {
+    if (this.usersFormData) {
       let alreadyUserForm = this.usersFormData.rowItem;
       // this.userForm.patchValue(alreadyUserForm);
       this.userForm.patchValue({
@@ -46,9 +46,7 @@ export class DialogComponent implements OnInit {
         _id: alreadyUserForm._id
         // Ensure this matches the `mat-option` value
       });
-    } else if (this.usersFormData.isUserForm == false) {
-      this.isUserForm = this.usersFormData.isUserForm;
-    } 
+    }
   }
 
 

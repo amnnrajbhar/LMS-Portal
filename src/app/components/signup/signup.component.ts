@@ -24,14 +24,18 @@ export class SignupComponent implements OnInit {
       this.http.saveNewMember(user).subscribe(data => {
         debugger;
         alert('New Member Created Successfully');
+        this.getMembersList();
+        this.router.navigate(['/login']);
       });
       //localStorage.setItem('currentUser', JSON.stringify(user));
-      this.router.navigate(['/login']);
     } else {
       alert('Please enter username & password');
     }
 
   }
 
-
+  getMembersList() {
+    this.http.getMembersList().subscribe((data: any) => {
+    });
+  }
 }

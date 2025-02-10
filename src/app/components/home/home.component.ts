@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
 
 @Component({
@@ -6,10 +6,15 @@ import { Router } from '@angular/router';
   templateUrl: './home.component.html',
   styleUrls: ['./home.component.css']
 })
-export class HomeComponent {
-
+export class HomeComponent implements OnInit{
+  loginUser:any='';
   constructor(private router: Router) { }
+  ngOnInit(): void {
+    // this.loginUser='Aman Rajbhar';
+    this.loginUser=localStorage?.['loginUser'];
+  }
   onLogout() {
+    
     this.router.navigate(['/login']);
     localStorage.clear();
   }

@@ -8,8 +8,13 @@ import { Router } from '@angular/router';
 })
 export class HeaderComponent implements OnInit {
   formName: any = 'Dashboard';
+  loginUser:any='';
   constructor(private router: Router) { }
   ngOnInit(): void {
+    debugger;
+    this.loginUser=localStorage?.['loginUser'].toUpperCase();
+    // this.loginUser='Aman Rajbhar';
+    
     if (this.router.url == '/home') {
       
       this.formName = 'Dashboard';

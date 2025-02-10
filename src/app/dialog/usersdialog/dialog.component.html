@@ -1,4 +1,4 @@
-<div *ngIf="isUserForm==true">
+
   <h2 mat-dialog-title class="text-center fw-bold">Create New User</h2>
 
   <mat-dialog-content class="container" style="height: 500px !important;">
@@ -8,17 +8,17 @@
       <div class="row mb-3">
         <div class="col-md-6">
           <label class="form-label">Full Name</label>
-          <input matInput class="form-control" formControlName="planName" placeholder="Enter full name" required>
-          <div class="invalid-feedback" *ngIf="userForm.get('planName')?.invalid">
+          <input matInput class="form-control" formControlName="fullName" placeholder="Enter full name" required>
+          <div class="invalid-feedback" *ngIf="userForm.get('fullName')?.invalid">
             Full Name is required
           </div>
         </div>
         <div class="col-md-6">
-          <label class="form-label">E-Mail / Price</label>
-          <input matInput type="Price" class="form-control" formControlName="Price" placeholder="Enter Price"
+          <label class="form-label">E-Mail</label>
+          <input matInput type="email" class="form-control" formControlName="userName" placeholder="Enter email"
             required>
-          <div class="invalid-feedback" *ngIf="userForm.get('Price')?.invalid">
-            Valid Price is required
+          <div class="invalid-feedback" *ngIf="userForm.get('userName')?.invalid">
+            Valid email is required
           </div>
         </div>
       </div>
@@ -52,5 +52,4 @@
         Changes</button>
     </mat-dialog-actions>
   </mat-dialog-content>
-</div>
 

@@ -37,6 +37,7 @@ export class LoginComponent implements OnInit {
       if (this.userInfo.length > 0) {
         if (this.userInfo[0].username == form.value.username && this.userInfo[0].password == form.value.password) {
           this.router.navigate(['/home']);
+          localStorage.setItem("loginUser",form.value.username);
         } else {
           alert('Invalid Credentials');
         }
