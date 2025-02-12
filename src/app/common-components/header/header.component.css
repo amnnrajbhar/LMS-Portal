@@ -1,49 +1,23 @@
-
-.search-field {
-    background-image: url('/assets/search.png');
-    background-repeat: no-repeat;
-}
-
+/* General Header Styles */
 .header {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    padding: 15px 20px;
-    /* background-color: white; */
-    /* box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); */
+    background-color: #fff;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    padding: 10px 15px;
 }
 
-
-
-.header-left h2 {
-    font-size: 22px;
-    font-weight: 600;
-    margin: 0;
+.menu-toggle {
+    font-size: 24px;
+    cursor: pointer;
 }
 
-.header-center {
-    flex: 1;
-    display: flex;
-    justify-content: center;
+.form-name {
+    font-size: 20px;
+    font-weight: bold;
 }
 
 .search-bar {
-    width: 50%;
-    padding: 5px 45px;
-    border: 1px solid #ccc;
-    border-radius: 11px;
-    font-size: 16px;
-    /* color: #ccc; */
-    background-color: #f9f9f9;
+    max-width: 300px;
 }
-
-.header-right {
-    display: flex;
-    align-items: center;
-    gap: 15px;
-}
-
-
 
 .notification-icon {
     width: 24px;
@@ -51,53 +25,38 @@
     cursor: pointer;
 }
 
-.user-profile {
-    display: flex;
-    align-items: center;
-    gap: 8px;
-}
-
 .profile-img {
     width: 30px;
     height: 30px;
-    border-radius: 50%;
-}
-
-.user-name {
-    font-size: 14px;
-    font-weight: 500;
-}
-
-
-/* //bootstrap */
-.header {
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-    padding: 10px 20px;
-    background: #f8f9fa;
-    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
-}
-.search-bar {
-    width: 100%;
-    max-width: 300px;
-}
-.notification-icon {
-    width: 30px;
-    height: 30px;
-    margin-right: 15px;
-}
-.profile-img {
-    width: 40px;
-    height: 40px;
     border-radius: 50%;
     object-fit: cover;
 }
-.user-profile {
-    display: flex;
-    align-items: center;
-}
+
 .user-name {
-    margin-left: 10px;
     font-weight: bold;
+}
+
+/* Responsive Styles */
+@media (max-width: 600px) {
+    .form-name {
+        font-size: 18px;
+    }
+
+    .search-bar {
+        width: 100%;
+    }
+
+    .notification-icon {
+        width: 20px;
+        height: 20px;
+    }
+
+    .profile-img {
+        width: 25px;
+        height: 25px;
+    }
+
+    .user-name {
+        display: none;
+    }
 }

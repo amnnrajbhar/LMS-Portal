@@ -1,21 +1,28 @@
-
 <header class="header container-fluid">
     <div class="row w-100 align-items-center">
-        <div class="col-md-4">
-            <h2>{{formName}}</h2>
+        <!-- Left Section: Menu Toggle and Form Name -->
+        <div class="col-6 col-md-4 d-flex align-items-center">
+            <span class="menu-toggle d-md-none me-2" (click)="toggleMenu($event)">☰</span>
+            <h2 class="form-name m-0">{{ formName }}</h2>
         </div>
-        <div class="col-md-4 text-center">
+
+        <!-- Search Bar for Mobile (Below Form Name) -->
+        <!-- <div class="col-12 d-md-none mt-2">
+            <input type="text" class="form-control search-bar" placeholder="Search Here">
+        </div> -->
+
+        <!-- Search Bar for Desktop (Inline Centered) -->
+        <div class="col-md-4 text-center d-none d-md-block">
             <input type="text" class="form-control search-bar" placeholder="Search Here">
         </div>
-        <div class="col-md-4 text-end d-flex justify-content-end align-items-center">
-            <img src="/assets/notification.png" alt="Notification" class="notification-icon">
-            <div class="user-profile">
-                <img src="/assets/AmanRajbharImg.jpeg" alt="User Profile" class="profile-img">
-                <span class="user-name">{{loginUser}}</span>
+
+        <!-- Right Section: Notification and Profile -->
+        <div class="col-6 col-md-4 text-end d-flex justify-content-end align-items-center">
+            <img src="/assets/notification.png" alt="Notification" class="notification-icon me-3">
+            <div class="user-profile d-flex align-items-center">
+                <img src="/assets/AmanRajbharImg.jpeg" alt="User Profile" class="profile-img me-2">
+                <span class="user-name d-none d-md-inline">{{ loginUser }}</span>
             </div>
         </div>
     </div>
 </header>
-
-<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
-

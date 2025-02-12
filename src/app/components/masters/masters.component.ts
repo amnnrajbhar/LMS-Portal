@@ -131,4 +131,12 @@ users: any[] = [];
     // debugger;
     this.excelService.exportAsExcelFile(this.userList, 'Masters');
   }
+
+  menuActive: boolean = false;
+
+  receiveMessage($event:any) {
+    //debugger;
+    this.menuActive = $event;
+    //alert(this.menuActive);
+  }
 }

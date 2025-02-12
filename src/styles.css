@@ -15,7 +15,7 @@
     /* justify-content: center; */
 }
 .search-bar {
-    width: 50%;
+    width: 60%;
     padding: 5px 45px;
     border: 1px solid #ccc;
     border-radius: 11px;
@@ -29,3 +29,85 @@
 }
 html, body { height: 100%; }
 body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }
+
+/* Responsive Menu */
+.sidebar-menu {
+    transition: transform 0.3s ease;
+}
+
+@media (max-width: 600px) {
+    .sidebar-menu {
+        transform: translateX(-100%);
+        position: fixed;
+        top: 0;
+        bottom: 0;
+        z-index: 1000;
+        background: #fff;
+        box-shadow: 2px 0 5px rgba(0, 0, 0, 0.2);
+        height: 100vh;
+        width: 250px;
+    }
+
+    .sidebar-menu.active {
+        transform: translateX(0);
+    }
+
+    main {
+        padding-left: 0;
+    }
+}
+/* Forms Resposive */
+/* Custom CSS for mobile responsiveness */
+@media (max-width: 768px) {
+    .sidebar-menu {
+        position: fixed;
+        left: -100%;
+        width: 80%;
+        height: 100vh;
+        z-index: 1000;
+        transition: all 0.3s;
+    }
+    
+    .sidebar-menu.active {
+        left: 0;
+    }
+    
+    main {
+        width: 100%;
+        margin-left: 0;
+        padding: 0 15px !important;
+    }
+    
+    .search-group {
+        width: 100%;
+        order: 1;
+    }
+    
+    .filter-group {
+        order: 2;
+        margin-top: 1rem;
+    }
+    
+    .button-group {
+        order: 3;
+        margin-top: 1rem;
+        width: 100%;
+        justify-content: space-between;
+    }
+    
+    .button-group .btn {
+        flex: 1;
+        max-width: 48%;
+    }
+}
+
+@media (max-width: 576px) {
+    .table td, .table th {
+        padding: 0.5rem;
+        font-size: 0.875rem;
+    }
+    
+    .btn-sm {
+        padding: 0.25rem 0.5rem;
+    }
+}

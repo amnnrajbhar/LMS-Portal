@@ -1,5 +1,6 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, HostListener, OnInit, ViewChild } from '@angular/core';
 import { Router } from '@angular/router';
+import { HeaderComponent } from 'src/app/common-components/header/header.component';
 
 @Component({
   selector: 'app-home',
@@ -8,6 +9,8 @@ import { Router } from '@angular/router';
 })
 export class HomeComponent implements OnInit{
   loginUser:any='';
+  // @ViewChild(HeaderComponent) child: any
+  // isShowMenu:any= false;
   constructor(private router: Router) { }
   ngOnInit(): void {
     // this.loginUser='Aman Rajbhar';
@@ -17,5 +20,12 @@ export class HomeComponent implements OnInit{
     
     this.router.navigate(['/login']);
     localStorage.clear();
+  }
+  menuActive: boolean = false;
+
+  receiveMessage($event:any) {
+    //debugger;
+    this.menuActive = $event;
+    //alert(this.menuActive);
   }
 }

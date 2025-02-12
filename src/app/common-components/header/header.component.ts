@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, EventEmitter, HostListener, OnInit, Output } from '@angular/core';
 import { Router } from '@angular/router';
 
 @Component({
@@ -9,10 +9,13 @@ import { Router } from '@angular/router';
 export class HeaderComponent implements OnInit {
   formName: any = 'Dashboard';
   loginUser:any='';
+  // isShowMenu: boolean = true; // Example value
+  // @Output() <isShowMenu:false>EventEmitter;
+  @Output() isShowMenu = new EventEmitter<boolean>();
   constructor(private router: Router) { }
   ngOnInit(): void {
-    debugger;
-    this.loginUser=localStorage?.['loginUser'].toUpperCase();
+    // debugger;
+    this.loginUser=localStorage?.['loginUser'];//.toUpperCase()
     // this.loginUser='Aman Rajbhar';
     
     if (this.router.url == '/home') {
@@ -41,4 +44,19 @@ export class HeaderComponent implements OnInit {
       this.formName = 'Masters';
     }
   }
+
+  menuActive: boolean = true;
+  toggleMenu(event: Event) {
+    //debugger;
+    event.stopPropagation(); // Prevents the click from propagating to the document
+    this.menuActive = !this.menuActive;
+    // this.isShowMenu=false;
+    this.isShowMenu.emit(this.menuActive);
+  }
+   // Close menu on any outside click
+    @HostListener('document:click', ['$event'])
+    onClickOutside() {
+      this.menuActive = false;
+      this.isShowMenu.emit(this.menuActive);
+    }
 }

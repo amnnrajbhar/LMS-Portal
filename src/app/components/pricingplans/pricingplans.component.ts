@@ -115,9 +115,6 @@ users: any[] = [];
     });
   }
 
-  exportToExcel() {
-  }
-
   deletePricingPlan(id: any) {
     this.httpservice.deletePricingPlan(id).subscribe(data => {
       this.getPricingPlanList();
@@ -132,5 +129,13 @@ users: any[] = [];
       this.userList = data;
       console.log(data);
     });
+  }
+
+  menuActive: boolean = false;
+
+  receiveMessage($event:any) {
+    //debugger;
+    this.menuActive = $event;
+    //alert(this.menuActive);
   }
 }
